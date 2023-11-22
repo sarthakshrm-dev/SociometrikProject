@@ -1,0 +1,7 @@
+.tabBtn {
+  @apply px-5 py-1 transition-all ease-in-out rounded-full cursor-pointer bg-primary1/0 text-secondary hover:bg-primary1 hover:text-white;
+}
+.tabBtnActive {
+  @apply text-white bg-primary1;
+}
+

@@ -1,0 +1,297 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-sans text-xs text-white 2xl:text-sm bg-dark4;
+}
+
+.form-control {
+  @apply w-full px-2 py-1 text-xs text-white transition-all ease-in-out bg-black border rounded 2xl:px-4 2xl:py-2 hover:border-white border-secondary;
+}
+.checkBox {
+  @apply appearance-none border border-white rounded h-4 w-4 bg-contain bg-no-repeat bg-center checked:bg-[url('/images/checked.svg')] checked:border-0 transition duration-200 cursor-pointer;
+}
+.checkSwitch{
+  @apply relative w-5 h-1 mr-2 rounded-full appearance-none cursor-pointer bg-primary2;
+}
+.checkSwitch:after{
+  content: '';
+  @apply w-3 h-3 rounded-full bg-primary1 absolute -top-1 left-0 transition-all ease-in-out
+}
+.checkSwitch:checked::after{
+  @apply left-2
+}
+
+.btn-secondary {
+  @apply p-3 text-white rounded bg-primary1;
+}
+.btn-primary {
+  @apply p-3 text-center text-white rounded cursor-pointer bg-gradient-to-r from-primary2 to-primary2/20;
+}
+.menuBar {
+  @apply fixed top-0 bottom-0 left-0 z-10 flex flex-col justify-between p-2 text-white transition-all ease-in-out 2xl:p-3 bg-gradient-to-t from-dark3 to-primary1/50 bg-dark2;
+}
+.menuBar:hover {
+  @apply bg-gradient-to-t from-dark2 to-dark3;
+}
+
+.mainMenu {
+  @apply w-10 transition-all ease-in-out;
+}
+.expand .menuBar .mainMenu {
+  @apply w-56 2xl:w-64;
+}
+.mainMenu li {
+  @apply relative flex items-center px-2 py-2 -mx-2 transition-all ease-in-out bg-transparent cursor-pointer 2xl:-mx-3 2xl:px-3;
+}
+.mainMenu li:hover {
+  @apply bg-gradient-to-r from-primary1/30 text-primary1;
+}
+.linkLabel,
+.mainMenu li:focus .linkLabel {
+  @apply absolute flex justify-between invisible pl-4 transition-all ease-in-out scale-0 opacity-0 grow left-11 right-5;
+}
+.expand .menuBar .linkLabel {
+  @apply visible scale-100 opacity-100;
+}
+.subMenu {
+  @apply relative w-56 p-4 overflow-y-auto text-white transition-all ease-in-out 2xl:p-6 ml-14 2xl:ml-16 2xl:w-72 bg-gradient-to-t from-dark2 to-dark3;
+}
+.dropRight {
+  /* -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  display: -webkit-box; */
+  @apply relative py-2 pl-3 pr-5 mb-5 transition-all ease-in-out bg-black border rounded cursor-pointer hover:border-white border-secondary 2xl:max-h-[94px] max-h-[76px] overflow-auto;
+}
+.dropRight ul {
+  @apply absolute top-0 invisible text-white -right-52 bg-dark2 w-52;
+}
+.dropRight:hover ul {
+  @apply visible;
+}
+.btnTab {
+  @apply 2xl:px-7 px-3 2xl:py-2 py-1 border rounded-full text-primary1 border-primary1 2xl:min-w-[100px] min-w-[80px] text-center transition-all ease-in-out;
+}
+.btnTab.active,
+.btnTab:hover {
+  @apply font-medium bg-primary1 text-dark1 border-primary1;
+}
+
+.ddOptions {
+  @apply fixed invisible w-48 overflow-y-auto text-white transition-all ease-in-out rounded-lg opacity-0 2xl:w-56 bg-gradient-to-b from-dark4 to-dark4/80 left-3 -z-10;
+}
+.ddOptions.activeDD {
+  @apply visible opacity-100 z-20
+}
+.ddOptions li {
+  @apply relative px-2 py-2 border-b cursor-pointer border-white/20 last:border-b-0 text-white/50;
+}
+.ddOptions li span{
+  @apply absolute invisible right-2 top-3;
+}
+.ddOptions li:hover {
+  @apply text-primary1;
+}
+.ddOptions li.ddSelected {
+  @apply text-primary1 pr-8
+}
+.ddOptions li.ddSelected span{
+  @apply visible
+}
+
+.type-dark {
+  @apply rounded-md bg-primary1;
+}
+.onMapBtn {
+  @apply relative my-2 text-white rounded w-9 h-9 bg-dark4/90 hover:bg-primary1;
+}
+.onMapBtn.active {
+  @apply bg-primary1;
+}
+.toolTipLeft {
+  @apply absolute top-0 invisible p-2 text-white transition-all ease-in-out rounded opacity-0 right-5 bg-primary1 min-w-max;
+}
+.onMapBtn:hover .toolTipLeft {
+  @apply visible opacity-100 right-10;
+}
+.error {
+  @apply mt-1 text-xs text-primary1;
+}
+
+select option {
+  @apply bg-dark1;
+}
+
+
+.searchArea .mapboxgl-ctrl-geocoder {
+  @apply w-full max-w-full px-3 bg-transparent border border-gray-400 rounded focus:outline-none min-w-min;
+}
+.searchArea .mapboxgl-ctrl-geocoder .mapboxgl-ctrl-geocoder--input{
+  @apply text-white focus:outline-0
+}
+.searchArea .mapboxgl-ctrl-geocoder .mapboxgl-ctrl-geocoder--button{
+  @apply bg-transparent
+}
+.searchArea .mapboxgl-ctrl-geocoder .mapboxgl-ctrl-geocoder--input{
+ @apply p-0 pl-6
+}
+.mapboxgl-popup-content{
+  @apply !bg-dark3 border-primary2 border shadow-md !rounded-md !font-thin !font-sans
+}
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+  @apply !border-t-primary2
+}
+.mapboxgl-popup-close-button{
+  @apply text-highlight !right-1
+}
+
+.menuUl li{
+  @apply flex justify-between items-center text-white/50 px-6 py-2 cursor-pointer hover:text-primary1 hover:bg-gradient-to-r from-primary1/30
+}
+.menuUl li span.icon-rght-arrow, .dropRight span.icon-rght-arrow  {
+  @apply pointer-events-none
+}
+
+.max-w-12 {
+  max-width: 12rem;
+}
+
+.slider {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 5px; /* Specified height */
+  background: rgba(184, 151, 230, 0.3); /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+  border-radius: 10px;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 15px; /* Set a specific slider handle width */
+  height: 15px; /* Slider handle height */
+  background: rgb(184 151 230); /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 50%;
+  position: relative;
+  top: -0px;
+}
+.slider::-moz-range-progress {
+  background-color: rgba(184, 151, 230, 1);
+}
+
+/* Dual Range Slider */
+.sliderTrack {
+  position: absolute;
+  background: rgba(184, 151, 230, 0.3);
+  width: 100%;
+  z-index: 1;
+  border-radius: 10px;
+  height: 5px;
+}
+
+.sliderRange {
+  position: absolute;
+  background-color: rgba(184, 151, 230, 1);
+  z-index: 2;
+  border-radius: 10px;
+  height: 5px;
+}
+
+.thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  pointer-events: none;
+  position: absolute;
+  height: 0;
+  width: 85%;
+  outline: none;
+}
+
+.thumbLeft {
+  z-index: 3;
+}
+
+.thumbRight {
+  z-index: 4;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: rgba(184, 151, 230, 1);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+
+.thumb::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: rgba(184, 151, 230, 1);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+
+/* treemap gradient */
+.treemapLegend {
+  background-image: linear-gradient(#8800E4, #E6E6E6);
+}
+
+/* fade animation */
+.fade {
+  animation: fadeAnim 1s;
+}
+
+@keyframes fadeAnim {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* width */
+.w-fit {
+  width: fit-content;
+}
+
+/* width */
+::-webkit-scrollbar {
+  @apply w-1 h-1
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /* box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);  */
+  @apply rounded-lg
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-primary1 rounded-lg
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary1
+}

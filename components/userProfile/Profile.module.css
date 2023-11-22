@@ -1,0 +1,6 @@
+.gridTable8 {
+  @apply grid grid-cols-8 gap-y-3 text-center border border-white/20 rounded-2xl py-3 mt-5 text-sm mb-6;
+}
+.gridTable8 div {
+  @apply flex items-center justify-center px-2;
+}
